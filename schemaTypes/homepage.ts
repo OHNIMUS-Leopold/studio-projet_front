@@ -18,10 +18,12 @@ export const homepage = defineType({
         fields: [
             {type: 'string', name: 'title'},
             {type: 'text', name: 'text'},
+            {type: 'image', name: 'image'},
+            {type: 'string', name: 'trial'},
             {
                 name: 'stats',
                 type: 'array',
-                title: 'stats for hero',
+                title: 'Stats for Hero',
                 of: [
                     defineArrayMember({
                         type: 'object',
@@ -29,6 +31,30 @@ export const homepage = defineType({
                         fields: [
                             {type: 'string', name: 'value'},
                             {type: 'string', name: 'text'},
+                        ]
+                    }),
+                ]
+            }
+        ],
+    }),
+    defineField({
+        type: 'object',
+        name: 'FeaturesSection',
+        fields: [
+            {type: 'string', name: 'title'},
+            {type: 'text', name: 'text'},
+            {
+                name: 'features',
+                type: 'array',
+                title: 'Features for Features Section',
+                of: [
+                    defineArrayMember({
+                        type: 'object',
+                        name: 'feature',
+                        fields: [
+                            {type: 'string', name: 'title'},
+                            {type: 'text', name: 'description'},
+                            {type: 'image', name: 'icon'},
                         ]
                     }),
                 ]
